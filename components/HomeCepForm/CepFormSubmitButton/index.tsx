@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { useAppSelector } from '@app/hooks/redux.hook';
 import { isCepLoading } from '@app/store/slices';
 
-export const SubmitButton: FC = () => {
+export const CepFormSubmitButton: FC = () => {
   const loading = useAppSelector(isCepLoading);
 
   return (

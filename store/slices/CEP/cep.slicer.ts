@@ -27,20 +27,22 @@ const cepSlicer = createSlice({
     builder.addCase(fetchGetCep.pending, state => {
       state.loading = true;
       state.error = null;
+      state.data = initialState.data;
     });
     builder.addCase(fetchGetCep.fulfilled, (state, action) => {
       state.data = action.payload;
       state.loading = false;
     });
     builder.addCase(fetchGetCep.rejected, (state, { payload }) => {
-      state.error = payload as string;
+      state.error = 'CEP não encontrado';
       state.loading = false;
     });
   },
 });
 
 const isCepLoading = (state: RootState) => state.cep.loading;
-export { isCepLoading };
+const getCepData = (state: RootState) => state.cep.data;
+export { isCepLoading, getCepData };
 
 // export const {} = cepSlicer.actions;
 export default cepSlicer.reducer;

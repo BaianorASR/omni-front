@@ -7,6 +7,7 @@ export abstract class AbstractApi {
       baseURL: endpoint,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
     });
   }
