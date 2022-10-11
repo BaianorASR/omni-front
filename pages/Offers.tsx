@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect } from 'react';
 
-import { OffersCity } from '@app/components';
+import { GoToHomeButton, OffersCity } from '@app/components';
 import { getCepData } from '@app/store/slices';
 import { MainLayout } from '@app/styles';
 
@@ -33,6 +33,7 @@ const Offers: NextPage = () => {
           </div>
         ))}
       </div>
+      <GoToHomeButton />
     </MainLayout>
   );
 };

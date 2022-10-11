@@ -22,7 +22,9 @@ const initialState: TCepState = {
 const cepSlicer = createSlice({
   name: 'cep',
   initialState,
-  reducers: {},
+  reducers: {
+    resetCep: () => initialState,
+  },
   extraReducers: builder => {
     builder.addCase(fetchGetCep.pending, state => {
       state.loading = true;
@@ -44,5 +46,5 @@ const isCepLoading = (state: RootState) => state.cep.loading;
 const getCepData = (state: RootState) => state.cep.data;
 export { isCepLoading, getCepData };
 
-// export const {} = cepSlicer.actions;
+export const { resetCep } = cepSlicer.actions;
 export default cepSlicer.reducer;

@@ -9,11 +9,9 @@ type MainLayoutProps = {
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
-    <main className=''>
+    <main className='flex flex-col justify-between h-screen'>
       <Header />
-      <section className='flex flex-col items-center min-h-[calc(100vh-128px)] px-3 py-10'>
-        {children}
-      </section>
+      <section className='flex flex-col items-center px-3 py-10'>{children}</section>
       <Footer />
     </main>
   );
