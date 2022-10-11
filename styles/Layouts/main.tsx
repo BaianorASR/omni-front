@@ -1,14 +1,20 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { Footer } from '@app/components/Footer';
 import { Header } from '@app/components/Header';
 
-export const MainLayout: FC = ({ children }: any) => {
+type MainLayoutProps = {
+  children: ReactNode | ReactNode[];
+};
+
+export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className=''>
+    <main className=''>
       <Header />
-      {children}
+      <section className='flex flex-col items-center min-h-[calc(100vh-128px)] px-3 py-10'>
+        {children}
+      </section>
       <Footer />
-    </div>
+    </main>
   );
 };

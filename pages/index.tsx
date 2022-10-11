@@ -4,6 +4,7 @@ import { useCallback, useEffect } from 'react';
 
 import { Footer, Header, HomeCepForm, HomeHero } from '@app/components';
 import { getCepData } from '@app/store/slices';
+import { MainLayout } from '@app/styles';
 
 import { useAppSelector } from '../hooks';
 
@@ -18,14 +19,10 @@ const Home: NextPage = () => {
   useEffect(handlePageRedirect, [handlePageRedirect]);
 
   return (
-    <main>
-      <Header />
-      <section className='flex flex-col items-center h-[calc(100vh-128px)] px-3 py-10'>
-        <HomeHero />
-        <HomeCepForm />
-      </section>
-      <Footer />
-    </main>
+    <MainLayout>
+      <HomeHero />
+      <HomeCepForm />
+    </MainLayout>
   );
 };
 

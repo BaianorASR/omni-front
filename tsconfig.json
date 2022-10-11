@@ -25,7 +25,9 @@
       "@app/services": ["services/"],
       "@app/services/*": ["services/*"],
       "@app/util": ["util/"],
-      "@app/util/*": ["util/*"]
+      "@app/util/*": ["util/*"],
+      "@app/styles": ["styles/"],
+      "@app/styles/*": ["styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
